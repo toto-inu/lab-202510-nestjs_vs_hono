@@ -1,5 +1,5 @@
 import { Hono } from 'hono'
-import { UserService } from '../services/userService'
+import { UserService } from '../services/userService.js'
 
 const users = new Hono()
 const userService = new UserService()
