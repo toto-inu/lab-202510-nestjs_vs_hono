@@ -1,12 +1,12 @@
 import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
-import { users } from './routes/users'
-import { posts } from './routes/posts'
+import { userController } from './modules/users/index.js'
+import { postController } from './modules/posts/index.js'
 
 const app = new Hono()
 
-app.route('/api/users', users)
-app.route('/api/posts', posts)
+app.route('/api/users', userController)
+app.route('/api/posts', postController)
 
 serve({
   fetch: app.fetch,
