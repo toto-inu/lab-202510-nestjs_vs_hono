@@ -4,7 +4,7 @@
  */
 
 import type { Context, Next } from 'hono';
-import { Logger } from '../../utilModules/logger.js';
+import { Logger } from '../../utilModules/logger';
 
 export const loggingMiddleware = async (c: Context, next: Next) => {
   const startTime = Date.now();

@@ -1,2 +1,2 @@
-export { SlackService } from './slackService.js'
-export { SlackModule } from './slackModule.js'
+export { SlackService } from './slackService'
+export { SlackModule } from './slackModule'

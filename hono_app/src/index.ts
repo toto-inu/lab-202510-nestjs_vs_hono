@@ -1,11 +1,11 @@
 import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
-import { userController } from './modules/users/index.js'
-import { postController } from './modules/posts/index.js'
-import { loggingMiddleware } from './core/middleware/loggingMiddleware.js'
+import { userController } from './modules/users/index'
+import { postController } from './modules/posts/index'
+import { loggingMiddleware } from './core/middleware/loggingMiddleware'
 
 // モジュールを登録（デコレータが実行されてDIコンテナに登録される）
-import './modules/posts/postModule.js'
+import './modules/posts/postModule'
 
 const app = new Hono()
 

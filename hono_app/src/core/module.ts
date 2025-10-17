@@ -1,4 +1,4 @@
-import { container } from './di-container.js'
+import { container } from './di-container'
 
 type Constructor<T = any> = new (...args: any[]) => T
 

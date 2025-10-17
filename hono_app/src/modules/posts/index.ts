@@ -1,3 +1,3 @@
-export { postController } from './postController.js'
-export { PostService } from './postService.js'
+export { postController } from './postController'
+export { PostService } from './postService'
 

@@ -1,5 +1,5 @@
-import { Injectable } from '../../core/module.js'
-import { SlackService } from '../../utilModules/slack/index.js'
+import { Injectable } from '../../core/module'
+import { SlackService } from '../../utilModules/slack/index'
 
 @Injectable()
 export class PostService {

@@ -1,6 +1,6 @@
-import { Module } from '../../core/module.js'
-import { PostService } from './postService.js'
-import { SlackModule } from '../../utilModules/slack/index.js'
+import { Module } from '../../core/module'
+import { PostService } from './postService'
+import { SlackModule } from '../../utilModules/slack/index'
 
 @Module({
   imports: [SlackModule],

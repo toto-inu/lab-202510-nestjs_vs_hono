@@ -1,5 +1,5 @@
-import type { ModuleMetadata } from '../../core/module.js'
-import { SlackService } from './slackService.js'
+import type { ModuleMetadata } from '../../core/module'
+import { SlackService } from './slackService'
 
 export const SlackModule: ModuleMetadata = {
   providers: [

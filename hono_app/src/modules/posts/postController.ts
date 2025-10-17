@@ -1,6 +1,6 @@
 import { Hono } from 'hono'
-import { container } from '../../core/di-container.js'
-import { PostService } from './postService.js'
+import { container } from '../../core/di-container'
+import { PostService } from './postService'
 
 export const postController = new Hono()
 

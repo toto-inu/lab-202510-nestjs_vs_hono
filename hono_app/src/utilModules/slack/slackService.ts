@@ -1,5 +1,5 @@
-import { Injectable } from '../../core/module.js'
-import { Logger } from '../logger.js'
+import { Injectable } from '../../core/module'
+import { Logger } from '../logger'
 
 @Injectable()
 export class SlackService {
