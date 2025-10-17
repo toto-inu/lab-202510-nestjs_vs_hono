@@ -1,9 +1,10 @@
-import { Injectable } from '../../core/module'
-import { SlackService } from '../../utilModules/slack/index'
+import { injectable, inject } from 'inversify'
+import { TYPES } from '../../core/types.js'
+import { SlackService } from '../../utilModules/slack/index.js'
 
-@Injectable()
+@injectable()
 export class PostService {
-  constructor(private slackService: SlackService) {}
+  constructor(@inject(TYPES.SlackService) private slackService: SlackService) {}
 
   async getPosts() {
     return [{ id: 1, title: 'First Post' }]

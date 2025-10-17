@@ -1,7 +1,7 @@
-import { Injectable } from '../../core/module'
-import { Logger } from '../logger'
+import { injectable } from 'inversify'
+import { Logger } from '../logger.js'
 
-@Injectable()
+@injectable()
 export class SlackService {
   async sendNotification(message: string): Promise<void> {
     // 実際のSlack APIを呼び出す代わりに、ログ出力でシミュレート
