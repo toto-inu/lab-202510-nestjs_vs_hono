@@ -9,9 +9,6 @@
 .idea/shelf
 dist/
 
-# claude code local settings
-.claude/settings.local.json
-
 # deps
 node_modules/
 
