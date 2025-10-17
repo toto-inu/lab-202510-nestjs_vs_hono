@@ -1,9 +1,10 @@
 import { Injectable } from '../../core/module.js';
+import { Logger } from '../logger.js';
 @Injectable()
 export class SlackService {
     async sendNotification(message) {
         // 実際のSlack APIを呼び出す代わりに、ログ出力でシミュレート
-        console.log(`[Slack Notification] ${message}`);
+        Logger.info('SlackService', `Notification sent: ${message}`);
         // 本番環境では以下のようなコードになります：
         // const webhookUrl = process.env.SLACK_WEBHOOK_URL
         // await fetch(webhookUrl, {
