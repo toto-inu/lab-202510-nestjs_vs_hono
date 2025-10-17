@@ -5,9 +5,13 @@ import './core/container.js' // Inversifyコンテナを初期化
 import { userController } from './modules/users/index.js'
 import { postController } from './modules/posts/index.js'
 import { loggingMiddleware } from './core/middleware/loggingMiddleware.js'
+import { containerMiddleware } from './core/middleware/containerMiddleware.js'
+import type { HonoEnv } from './core/types.js'
 
-const app = new Hono()
+const app = new Hono<HonoEnv>()
 
+// コンテナミドルウェアを適用（最初に適用）
+app.use('*', containerMiddleware())
 // ロギングミドルウェアを適用
 app.use('*', loggingMiddleware)
 

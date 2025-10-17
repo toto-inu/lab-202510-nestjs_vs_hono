@@ -1,3 +1,3 @@
-export { userController } from './userController'
-export { UserService } from './userService'
+export { userController } from './userController.js'
+export { UserService } from './userService.js'
 
