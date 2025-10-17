@@ -1,9 +1,9 @@
 ---
 to: src/modules/<%= name %>/<%= h.changeCase.camel(name) %>Service.ts
 ---
-import { Injectable } from '../../core/module'
+import { injectable } from 'inversify'
 
-@Injectable()
+@injectable()
 export class <%= h.changeCase.pascal(name) %>Service {
   constructor() {}
 
