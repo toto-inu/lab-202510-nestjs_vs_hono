@@ -1,16 +1,33 @@
 import { serve } from '@hono/node-server'
-import { Hono } from 'hono'
-import { userController } from './modules/users/index.js'
-import { postController } from './modules/posts/index.js'
+import { serveStatic } from '@hono/node-server/serve-static'
 
-const app = new Hono()
+// Development: Use Vite dev server with integrated API routes
+if (process.env.NODE_ENV !== 'production') {
+  const { default: devServer } = await import('@hono/vite-dev-server')
+  const { Hono } = await import('hono')
 
-app.route('/api/users', userController)
-app.route('/api/posts', postController)
+  const app = new Hono()
 
-serve({
-  fetch: app.fetch,
-  port: 3000
-}, (info) => {
-  console.log(`Server is running on http://localhost:${info.port}`)
-})
+  app.use('*', devServer({
+    entry: 'app/server.ts',
+  }))
+
+  serve({
+    fetch: app.fetch,
+    port: 3000
+  }, (info) => {
+    console.log(`Server is running on http://localhost:${info.port}`)
+  })
+} else {
+  // Production: Serve static files and HonoX app
+  const { default: honoxApp } = await import('../app/server.js')
+
+  honoxApp.use('/static/*', serveStatic({ root: './dist' }))
+
+  serve({
+    fetch: honoxApp.fetch,
+    port: 3000
+  }, (info) => {
+    console.log(`Server is running on http://localhost:${info.port}`)
+  })
+}
