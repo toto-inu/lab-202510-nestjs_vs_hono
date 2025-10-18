@@ -65,7 +65,6 @@ export default createRoute(async (c) => {
           </div>
         ))}
       </div>
-    </div>,
-    { title: 'Posts - Blog' }
+    </div>
   )
 })
