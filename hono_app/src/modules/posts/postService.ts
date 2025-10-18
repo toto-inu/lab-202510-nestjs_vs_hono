@@ -39,6 +39,10 @@ export class PostService {
     return this.posts
   }
 
+  async getPostById(id: number) {
+    return this.posts.find(post => post.id === id)
+  }
+
   async createPost(postData: { title: string; content: string }) {
     const newPost: Post = {
       id: this.nextId++,

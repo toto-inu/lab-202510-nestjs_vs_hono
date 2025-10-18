@@ -1,5 +1,5 @@
 import { createRoute } from 'honox/factory'
-import { PostService } from '../../src/modules/posts/postService.js'
+import { PostService } from '../../src/modules/posts/index.js'
 
 export default createRoute(async (c) => {
   const postService = PostService.getInstance()
@@ -12,7 +12,7 @@ export default createRoute(async (c) => {
       {/* New Post Form */}
       <div style={{ marginBottom: '32px', padding: '20px', border: '2px solid #0066cc', borderRadius: '8px', backgroundColor: '#f8f9fa' }}>
         <h2 style={{ marginTop: 0 }}>Create New Post</h2>
-        <form method="POST" action="/posts/create" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+        <form method="post" action="/posts/create" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
           <div>
             <label htmlFor="title" style={{ display: 'block', marginBottom: '4px', fontWeight: 'bold' }}>
               Title

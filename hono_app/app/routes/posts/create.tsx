@@ -1,5 +1,5 @@
 import { createRoute } from 'honox/factory'
-import { PostService } from '../../../src/modules/posts/postService.js'
+import { PostService } from '../../../src/modules/posts/index.js'
 
 export const POST = createRoute(async (c) => {
   const postService = PostService.getInstance()
