@@ -1,5 +1,5 @@
 import { createRoute } from 'honox/factory'
-import { PostService } from '../../../src/modules/posts/index.js'
+import { PostService } from '../../src/modules/posts/index.js'
 
 export default createRoute(async (c) => {
   const id = c.req.param('id')

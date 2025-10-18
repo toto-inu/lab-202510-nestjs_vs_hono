@@ -20,7 +20,7 @@ if (process.env.NODE_ENV !== 'production') {
   })
 } else {
   // Production: Serve static files and HonoX app
-  const { default: honoxApp } = await import('../app/server.js')
+  const { default: honoxApp } = await import('../server.js')
 
   honoxApp.use('/static/*', serveStatic({ root: './dist' }))
 

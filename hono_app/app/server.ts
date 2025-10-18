@@ -1,7 +1,7 @@
 import { showRoutes } from 'hono/dev'
 import { createApp } from 'honox/server'
-import { userController } from '../src/modules/users/index.js'
-import { postController } from '../src/modules/posts/index.js'
+import { userController } from './src/modules/users/index.js'
+import { postController } from './src/modules/posts/index.js'
 
 const app = createApp()
 
